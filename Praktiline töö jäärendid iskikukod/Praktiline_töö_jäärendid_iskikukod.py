@@ -77,8 +77,13 @@ while True:
                     haig="Lõuna-Eesti Haigla (Võru), Põlva Haigla"
                     print(haig)
                 print(f"See in {sugu}, sünipäev {pp}. Ta on sündinud haigla {haig}")
-                print(isikukood)
-                isikukood=(m+n)
+
+                isikukood=[]                                         #kodutöö - Järjend isikukoodid sorteerida. Alguses naised ja lõpus mehed
+                n=int(i_list[0])%2==0
+                m=int
+
+                print()
+                
                 
                 arvud=list(map(int,arvud)) #pere obrazuet
                 arvud.sort()
