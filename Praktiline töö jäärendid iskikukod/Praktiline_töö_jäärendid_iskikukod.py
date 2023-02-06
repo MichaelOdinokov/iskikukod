@@ -38,8 +38,10 @@ while True:
 
                 if int(i_list[0])%2==0:
                     sugu="Naine"
+                    n.append(isikukood)
                 else:
                     sugu="Mees"
+                    m.append(isikukood)
 
                 Summa=i_list[0]*3 + i_list[1]*7 + i_list[2]*6 + i_list[3]*0 + i_list[4]*5 + i_list[5]*0 + i_list[6]*3 + i_list[7]*0 + i_list[8]*2 + i_list[9]*9
                 s=int(i_list[-1])
@@ -48,7 +50,8 @@ while True:
                 print(f"Viimane number: {S2}")
                 kontrolnr=S2
                 isikukood.append(i)
-                h=int(i_list[8]+i_list[9]+i_list[10])
+                h=int(i_list[7]+i_list[8]+i_list[9])
+                haig = ""
                 if 1<=h<=10:
                     haig="Kuresaare Haigla"
                 elif 11<=h<=19:
@@ -76,18 +79,26 @@ while True:
                 elif 651<=h<=700:
                     haig="Lõuna-Eesti Haigla (Võru), Põlva Haigla"
                     print(haig)
-                print(f"See in {sugu}, sünipäev {pp}. Ta on sündinud haigla {haig}")
+                print(f"See in "+sugu+", sünipäev "+pp+". Ta on sündinud "+haig)
 
-                isikukood=[]                                         #kodutöö - Järjend isikukoodid sorteerida. Alguses naised ja lõpus mehed
-                n=int(i_list[0])%2==0
-                m=int
-
+                isikukood=[]                                         
                 print()
-                
-                
                 arvud=list(map(int,arvud)) #pere obrazuet
                 arvud.sort()
                 print(arvud)
+                ven = int(input("Закончить цикл?\n1)Jah\n2)Ei\n"))
+        if ven == 1:
+            break
+print(n)
+print(m)
+
+       
+                
+                
+
+                
+
+                
 
                 
 
