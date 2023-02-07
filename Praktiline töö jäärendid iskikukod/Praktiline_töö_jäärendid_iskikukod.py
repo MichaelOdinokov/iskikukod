@@ -1,7 +1,15 @@
+from Omamodul import *
+
+
 arvud=[]
 isikukood=[]
-m=[]#mees
-n=[]#naine
+while True:
+    print(isikukood)
+    isikukood=naised_mehed(isikukood)#
+    print(isikukood)
+    arvud=list(map(int, arvud))
+    arvud.sort
+    print(arvud)
 
 while True:
         i=input("Anna sinu isikukood: ")
@@ -19,30 +27,14 @@ while True:
             arvud.append(i)
         else:
             print("Esimine sümbool on õige!")
-            i_list=list(i)
-            a=(i_list[1]+i_list[2])#aastane
-            k=int(i_list[3]+i_list[4])#kuud
-            p=int(i_list[5]+i_list[6])#päeva
-            if ((k)<1 or (k)>13) and ((p)<1 or (p)>31):
-                print("Sümipäev ei saanud")
+            if sp=="Viga":
                 arvud.append(i)
             else:
-                if s1==1 or s1==2:
-                    y="18"
-                elif s1==3 or s1==4:
-                    y="19"
-                else:
-                    y="20"
-                pp=str(p)+"."+str(k)+"."+y+str(a)
-                print(f"Sünipäev on {pp}")
+                print(f"Sünipäev on {i}")
 
-                if int(i_list[0])%2==0:
-                    sugu="Naine"
-                    n.append(isikukood)
-                else:
-                    sugu="Mees"
-                    m.append(isikukood)
-
+                #
+                sugu=Sugu(i_list)
+                 
                 Summa=i_list[0]*3 + i_list[1]*7 + i_list[2]*6 + i_list[3]*0 + i_list[4]*5 + i_list[5]*0 + i_list[6]*3 + i_list[7]*0 + i_list[8]*2 + i_list[9]*9
                 s=int(i_list[-1])
                 S1=s%11
@@ -50,44 +42,18 @@ while True:
                 print(f"Viimane number: {S2}")
                 kontrolnr=S2
                 isikukood.append(i)
-                h=int(i_list[7]+i_list[8]+i_list[9])
-                haig = ""
-                if 1<=h<=10:
-                    haig="Kuresaare Haigla"
-                elif 11<=h<=19:
-                    haig="Tartu Ülikooli Naistekliinik, Tartumaa, Tartu"
-                elif 221<=h<=220:
-                    haig="Ida-Tallinna Keskhaigla, Pelgulinna sünnitusmaja, Hiiumaa, Keila, Rapla haigla, Loksa haigla"
-                elif 221<=h<=270:
-                    haig="Ida-Viru Keskhaigla (Kohtla-Järve, endine Jõhvi)"
-                elif 271<=h<=370:
-                    haig="Maarjamõisa Kliinikum (Tartu), Jõgeva Haigla"
-                elif 371<=h<=420:
-                    haig="Narva Haigla"
-                elif 421<=h<=470:
-                    haig="Pärnu Haigla"
-                elif 471<=h<=490:
-                    haig="Pelgulinna Sünnitusmaja (Tallinn), Haapsalu haigla"
-                elif 491<=h<=520:
-                    haig="Järvamaa Haigla (Paide)"
-                elif 521<=h<=570:
-                    haig="Rakvere, Tapa haigla"
-                elif 571<=h<=600:
-                    haig="Valga Haigla"
-                elif 601<=h<=650:
-                    haig="Viljandi Haigla"
-                elif 651<=h<=700:
-                    haig="Lõuna-Eesti Haigla (Võru), Põlva Haigla"
-                    print(haig)
-                print(f"See in "+sugu+", sünipäev "+pp+". Ta on sündinud "+haig)
+                haig=a()
 
-                isikukood=[]                                         
+
+                print(haig)
+                print(f"See in "+sugu+", sünipäev "+pp+". Ta on sündinud "+haig)
+                                    
                 print()
                 arvud=list(map(int,arvud)) #pere obrazuet
                 arvud.sort()
                 print(arvud)
-                ven = int(input("Закончить цикл?\n1)Jah\n2)Ei\n"))
-        if ven == 1:
+                ven=int(input("Закончить цикл?\n1)Jah\n2)Ei\n"))
+        if ven==1:
             break
 print(n)
 print(m)
